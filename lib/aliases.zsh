@@ -10,6 +10,8 @@ alias zshfolder="cd ~/.zsh/"
 alias zshalias="vim ~/.zsh/lib/aliases.zsh"
 alias zshtheme="vim ~/.zsh/theme/hGen.zsh-theme"
 
+alias sshlist="vim ~/.ssh/known_hosts"
+
 alias tree="tree -AC"
 
 # navigation

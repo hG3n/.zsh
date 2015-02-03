@@ -1,6 +1,6 @@
 # TODO: Explain what some of this does..
 
-bindkey -e
+bindkey -v
 bindkey '\ew' kill-region
 bindkey -s '\el' "ls\n"
 bindkey '^r' history-incremental-search-backward
