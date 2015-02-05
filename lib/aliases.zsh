@@ -12,6 +12,10 @@ alias zshtheme="vim ~/.zsh/theme/hGen.zsh-theme"
 
 alias sshlist="vim ~/.ssh/known_hosts"
 
+if [ $(uname) = "Linux" ]; then
+  alias chrome="chromium-browser"
+fi
+
 alias tree="tree -AC"
 
 # navigation
@@ -31,7 +35,9 @@ alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 
 # program aliases
-alias subl='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
+if [ $(uname) != "Linux" ]; then
+  alias subl='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
+fi
 
 # connect to uni VPN
 alias buw-intern-c="networksetup -connectpppoeservice VPN-BUW-Intern"
@@ -45,6 +51,7 @@ alias suranger="sudo ranger"
 # programming and compiler
 alias g++11="LANG=en g++-4.9 -std=c++11"
 alias gcc11="LANG=en gcc-4.9 -std=c++11"
+alias go="./start.sh"
 
 # web and internet
 alias pingg="ping -c 3 google.com"
