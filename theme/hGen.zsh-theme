@@ -1,7 +1,20 @@
+function prompt_char {
+  git branch >/dev/null 2>/dev/null && echo '⚧' && return
+  echo '○'
+}
+
 function get_pwd() {
-   echo "${PWD/$HOME/~}"
+ echo "${PWD/$HOME/~}"
+}
+
+function print_branch() {
+  if git ls-files >& /dev/null; then
+    echo '→' $fg_bold[grey]$(prompt_char) :$reset_color$fg_bold[grey]$(git rev-parse --abbrev-ref HEAD)$reset_color;
+  else
+    echo '→' $fg_bold[grey]$(prompt_char)$reset_color
+  fi
 }
 
 PROMPT='
-$fg_bold[cyan]hGen:$reset_color $fg_bold[yellow]%~$reset_color
+$fg_bold[red]hGen:$reset_color $fg_bold[blue]%~$reset_color $(print_branch)
 >> '
