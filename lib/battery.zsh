@@ -29,7 +29,7 @@ function bathealth() {
 function battime() {
     rem=$(ioreg -rc AppleSmartBattery | grep '"TimeRemaining"' | awk '{print $3}')
     result=$(bc -l <<< "scale=0; $rem + 0")
-    result=$(python /Users/hGen/.zsh/lib/pythonscripts/timeconverter.py $result)
+    result=$(python pythonscripts/timeconverter.py $result)
 
     # print remaining time
     echo 'Remaining Time :' $result

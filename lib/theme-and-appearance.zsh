@@ -17,9 +17,9 @@ setopt cdablevarS
 
 if [[ x$WINDOW != x ]]
 then
-    SCREEN_NO="%B$WINDOW%b "
+  SCREEN_NO="%B$WINDOW%b "
 else
-    SCREEN_NO=""
+  SCREEN_NO=""
 fi
 
 # Apply theming defaults

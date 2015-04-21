@@ -9,7 +9,7 @@ function get_pwd() {
 
 function print_branch() {
   if git ls-files >& /dev/null; then
-    echo '→' $fg_bold[grey]$(prompt_char) :$reset_color$fg_bold[grey]$(git rev-parse --abbrev-ref HEAD)$reset_color;
+    echo '→' $fg_bold[grey]$(prompt_char) :$reset_color$fg_bold[grey]$(git branch | sed -n '/\* /s///p')$reset_color;
   else
     echo '→' $fg_bold[grey]$(prompt_char)$reset_color
   fi
