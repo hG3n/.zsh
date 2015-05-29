@@ -11,7 +11,7 @@ alias zshtheme="vim ~/.zsh/theme/hGen.zsh-theme"
 alias sshlist="vim ~/.ssh/known_hosts"
 
 if [ $(uname) = "Linux" ]; then
-  alias chrome="chromium-browser"
+  alias chrome="chromium-browser&"
 fi
 
 alias tree="tree -AC"
@@ -19,7 +19,13 @@ alias t="tree -AC"
 
 # navigation
 alias ..="cd .."
-alias e="open ."
+
+if [ $(uname -o) = "GNU/Linux" ]; then
+  alias e="nautilus ."
+else
+  alias e="open ."
+fi
+
 alias cdr="cd /"
 alias lsl="ls -lh"
 alias ls1="ls -1"
