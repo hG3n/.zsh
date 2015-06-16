@@ -62,8 +62,10 @@ alias suranger="sudo ranger"
 if [ $(uname) != "Linux"  ]; then
   alias g++11="LANG=en g++-4.9 -std=c++11 -fdiagnostics-color=auto"
   alias gcc11="LANG=en gcc-4.9 -std=c++11 -fdiagnostics-color=auto"
+  alias make="make -j$(nproc) "
 else
   alias g++11="LANG=en g++-5 -std=c++11 -fdiagnostics-color=auto"
+  alias make="make -j$(sysctl -n hw.ncpu)"
 fi
 
 alias go="./start.sh"
