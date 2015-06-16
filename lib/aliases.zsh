@@ -63,6 +63,12 @@ alias g++11="LANG=en g++-4.9 -std=c++11 -fdiagnostics-color=auto"
 alias gcc11="LANG=en gcc-4.9 -std=c++11 -fdiagnostics-color=auto"
 alias go="./start.sh"
 
+if [ $(uname) != "Linux" ]; then
+  alias make="make -j$(nproc) "
+else
+  alias make="make -j$(sysctl -n hw.ncpu)"
+fi
+
 # web and internet
 alias pingg="ping -c 3 google.com"
 
@@ -74,5 +80,4 @@ alias ragner="ranger"
 alias clera="clear"
 alias cler="clear"
 alias mkae="make"
-
 
