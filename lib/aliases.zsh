@@ -59,8 +59,13 @@ alias buw-extern-d="networksetup -disconnectpppoeservice VPN-BUW-Extern"
 alias suranger="sudo ranger"
 
 # programming and compiler
-alias g++11="LANG=en g++-4.9 -std=c++11 -fdiagnostics-color=auto"
-alias gcc11="LANG=en gcc-4.9 -std=c++11 -fdiagnostics-color=auto"
+if [ $(uname) != "Linux"  ]; then
+  alias g++11="LANG=en g++-4.9 -std=c++11 -fdiagnostics-color=auto"
+  alias gcc11="LANG=en gcc-4.9 -std=c++11 -fdiagnostics-color=auto"
+else
+  alias g++11="LANG=en g++-5 -std=c++11 -fdiagnostics-color=auto"
+fi
+
 alias go="./start.sh"
 
 if [ $(uname) != "Linux" ]; then
