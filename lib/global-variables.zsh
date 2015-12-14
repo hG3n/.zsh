@@ -6,4 +6,4 @@ vol=/Volumes/
 uni=~/Documents/Uni/
 home=~/
 back=../
-
+drive=~/Google\ Drive

@@ -20,7 +20,7 @@ alias t="tree -AC"
 # navigation
 alias ..="cd .."
 
-if [ $(uname -o) = "GNU/Linux" ]; then
+if [ $(uname) = "Linux" ]; then
   alias e="nautilus ."
 else
   alias e="open ."
@@ -30,6 +30,8 @@ alias cdr="cd /"
 alias lsl="ls -lh"
 alias ls1="ls -1"
 alias ls-a="ls -A "
+
+alias df="df -h"
 
 # searching
 alias findh="find ~ -name" # searches out of the ~ directory
@@ -59,22 +61,14 @@ alias buw-extern-d="networksetup -disconnectpppoeservice VPN-BUW-Extern"
 alias suranger="sudo ranger"
 
 # programming and compiler
-if [ $(uname) != "Linux"  ]; then
+if [ $(uname) != "Linux" ]; then
+  alias g++11="LANG=en g++-5 -std=c++11 -fdiagnostics-color=auto"
+else
   alias g++11="LANG=en g++-4.9 -std=c++11 -fdiagnostics-color=auto"
   alias gcc11="LANG=en gcc-4.9 -std=c++11 -fdiagnostics-color=auto"
-  alias make="make -j$(nproc) "
-else
-  alias g++11="LANG=en g++-5 -std=c++11 -fdiagnostics-color=auto"
-  alias make="make -j$(sysctl -n hw.ncpu)"
 fi
 
 alias go="./start.sh"
-
-if [ $(uname) != "Linux" ]; then
-  alias make="make -j$(nproc) "
-else
-  alias make="make -j$(sysctl -n hw.ncpu)"
-fi
 
 # web and internet
 alias pingg="ping -c 3 google.com"
