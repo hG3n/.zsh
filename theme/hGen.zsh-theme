@@ -16,5 +16,5 @@ function print_branch() {
 }
 
 PROMPT='
-$fg_bold[red]vulpius:$reset_color $fg_bold[blue]%~$reset_color $(print_branch)
+$fg_bold[red]$HOST:$reset_color $fg_bold[blue]%~$reset_color $(print_branch)
 >> '
