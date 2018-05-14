@@ -32,8 +32,10 @@ alias cdr="cd /"
 alias lsl="ls -lh"
 alias ls1="ls -1"
 alias ls-a="ls -A "
+alias lls="ls -Alht"
 
 alias df="df -h"
+alias dus="du -sh"
 
 # searching
 alias findh="find ~ -name" # searches out of the ~ directory
@@ -42,11 +44,6 @@ alias finda="find / -name" # searches out of the main dir
 alias grep="grep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
-
-# program aliases
-if [ $(uname) != "Linux" ]; then
-  alias subl='/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2'
-fi
 
 # airport command
 if [ $(uname) = "Darwin" ]; then

@@ -7,3 +7,6 @@ uni=~/Documents/Uni/
 home=~/
 back=../
 drive=~/Google\ Drive
+pro=~/Documents/projects
+work=~/Documents/work
+
