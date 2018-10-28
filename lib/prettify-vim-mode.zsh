@@ -1,11 +1,10 @@
-# TODO: Explain what some of this does..
-# This might be good?
-KEYTIMEOUT=10
+export KEYTIMEOUT=15
 
 bindkey -v
+
+bindkey '^r' history-incremental-search-backward
 bindkey '\ew' kill-region
 bindkey -s '\el' "ls\n"
-bindkey '^r' history-incremental-search-backward
 bindkey "^[[5~" up-line-or-history
 bindkey "^[[6~" down-line-or-history
 
@@ -35,4 +34,12 @@ bindkey "\e[3~" delete-char
 # make vi-mode behave well
 bindkey -M viins 'jk' vi-cmd-mode
 
+# show mode at the end of line
+function zle-line-init zle-keymap-select {
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$EPS1"
+    zle reset-prompt
+}
 
+zle -N zle-line-init
+zle -N zle-keymap-select
