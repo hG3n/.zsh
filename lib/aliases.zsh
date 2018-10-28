@@ -1,3 +1,6 @@
+# zsh
+alias zshreload="source ~/.zshrc"
+
 # folders and files
 alias vimrc="vim ~/.vimrc"
 alias bashrc="vim ~/.bash_profile"

@@ -1,4 +1,6 @@
 # TODO: Explain what some of this does..
+# This might be good?
+KEYTIMEOUT=10
 
 bindkey -v
 bindkey '\ew' kill-region
@@ -29,3 +31,8 @@ bindkey '^?' backward-delete-char
 bindkey "^[[3~" delete-char
 bindkey "^[3;5~" delete-char
 bindkey "\e[3~" delete-char
+
+# make vi-mode behave well
+bindkey -M viins 'jk' vi-cmd-mode
+
+
