@@ -19,6 +19,7 @@ fi
 
 alias tree="tree -AC"
 alias t="tree -AC"
+alias dirt="tree -AC -d -I 'node_modules'"
 
 alias df="df -h"
 
