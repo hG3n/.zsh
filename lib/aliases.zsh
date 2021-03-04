@@ -32,7 +32,6 @@ else
   alias e="open ."
 fi
 
-alias cdr="cd /"
 alias lsl="ls -lh"
 alias ls1="ls -1"
 alias ls-a="ls -A "
@@ -54,24 +53,18 @@ if [ $(uname) = "Darwin" ]; then
   alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
 fi
 
-# connect to uni VPN
-alias buw-intern-c="networksetup -connectpppoeservice VPN-BUW-Intern"
-alias buw-intern-d="networksetup -disconnectpppoeservice VPN-BUW-Intern"
-alias buw-extern-c="networksetup -connectpppoeservice VPN-BUW-Extern"
-alias buw-extern-d="networksetup -disconnectpppoeservice VPN-BUW-Extern"
-
 # sudo options
 alias suranger="sudo ranger"
 
 # web and internet
 alias pingg="ping -c 3 google.com"
 
-# preset
-alias preset_tex="cp ~/.presets/preset.tex ./"
-
 # stupid key fixes
 alias ragner="ranger"
 alias clera="clear"
 alias cler="clear"
 alias mkae="make"
+
+alias air="BluetoothConnector 38-F9-D3-B1-E5-D1 --notify"
+
 
