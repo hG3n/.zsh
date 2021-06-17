@@ -9,4 +9,3 @@ back=../
 drive=~/Google\ Drive
 pro=~/Documents/projects
 work=~/Documents/work
-

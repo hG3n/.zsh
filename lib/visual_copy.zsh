@@ -1,5 +1,4 @@
 #!/bin/zsh
-
 cpv() 
 {
     if [ `echo "$2" | grep ".*\/$"` ]; then
