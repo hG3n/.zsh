@@ -65,6 +65,7 @@ alias clera="clear"
 alias cler="clear"
 alias mkae="make"
 
+# for some reason this shit still doesn't work
 alias air="BluetoothConnector 38-F9-D3-B1-E5-D1 --notify"
 
 
