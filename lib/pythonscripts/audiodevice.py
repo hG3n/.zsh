@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-import sys
-import subprocess
-import signal
 import json
+import signal
+import subprocess
+import sys
 
 args = sys.argv
 COMMAND_BASE = 'SwitchAudioSource'
@@ -18,6 +18,19 @@ OPT_FORMAT_JSON = 'json'
 OPT_TYPE_INPUT = 'input'
 OPT_TYPE_OUTPUT = 'output'
 OPT_TYPE_SYSTEM = 'system'
+
+IGNORED_DEVICES = ['DELL S2721DGF', 'DELL S3422DWG', 'Hue Sync Audio', 'Sound Blaster X3 SPDIF Out']
+
+# class KeyHandler(threading.Thread):
+# 
+#     def __init__(self) -> None:
+#         threading.Thread.__init__(self)
+#         self.running = False
+# 
+#     def run(self) -> None:
+#         self.running = True
+#         while self.running:
+#             time.sleep(.1)
 
 
 def signal_handler(sig, frame):
@@ -82,6 +95,9 @@ def main():
         for d in range(0, num_devices):
             print("  (%i) %s" % (d + 1, devices[d]['name']))
 
+        # kh = KeyHandler()
+        # kh.start()
+
         device_selected_str = int(input())
         try:
             device_selected = int(device_selected_str)
@@ -99,6 +115,7 @@ def main():
             device = devices[device_selected - 1]
             print('Selecting', device['name'])
             select_audio_device(device['id'])
+        # kh.join()
 
     else:
         print('not implemented yet')
